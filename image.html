@@ -1,0 +1,105 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Image Manipulation</title>
+            <link rel="shortcut icon" href="https://bintangfadhlio.blogspot.com/favicon.ico" type="image/x-icon">
+            <link rel="stylesheet" href="script/style.css">
+      </head>
+      <body>
+            <div class="nav">
+                  <input type="checkbox" id="nav-check">
+                  <div class="nav-header">
+                        <div class="nav-title">
+                              <a href="index.html">
+                                    <img src="img/logo.png" height="50px" style="margin: 0px 30px">
+                              </a>
+                        </div>
+                  </div>
+                  <div class="nav-btn">
+                        <label for="nav-check">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                        </label>
+                  </div>
+                              
+                  <div class="nav-links">
+                  <a href="index.html">Home</a>
+                  <a class="active" href="image.html">Image Manipulation</a>
+                  <a href="animation.html">Animation Images</a>
+                  <a href="audio.html">Audio</a>
+                  <a href="video.html">Video</a>
+                  <a href="360.html">Photo 360</a>
+                  <a href="about.html">About Me</a>
+                  </div>
+            </div>
+
+            <div class="box">
+                  <h1>Image Manipulation</h1>
+                  <p>
+                        Dimana ini akan merubah atau memanipulasi gambar dengan menggunakan javascript.
+                  </p>
+                        <div class="tab">
+                                    <button class="tablinks" onclick="openImage(event, 'Asli')" id=defaultOpen>Asli</button>
+                                    <button class="tablinks" onclick="openImage(event, 'Grayscale')">Grayscale</button>
+                                    <button class="tablinks" onclick="openImage(event, 'Sepia')">Sepia</button>
+                                    <button class="tablinks" onclick="openImage(event, 'Threshold')">Threshold</button>
+                              </div>
+                              
+                              <div id="Asli" class="tabcontent">
+                                    <h3>Asli</h3>
+                                    <canvas id="1" width="480" height="360"></canvas>
+                              </div>
+                              
+                              <div id="Grayscale" class="tabcontent">
+                                    <h3>Grayscale</h3>
+                                    <p>
+                                                Grayscale adalah berbagai nuansa warna monokromatik dari hitam menjadi putih.
+                                                Oleh karena itu, gambar grayscale hanya memiliki warna abu-abu dan tidak 
+                                                berwarna. Grayscale dipengaruhi oleh intensitas dari hitam (nol intensitas) dan putih (penuh intensitas).
+                                                Biasanya grayscale mendukung minimal 8-bit grayscale, yang memiliki 256 level pencahayaan per pixel.
+                                    </p>
+                                    <h4>
+                                          var makePixelGrayScale = function (r,g,b,a){<br>
+                                                &emsp;var y = (0.5*r)+(0.59*g)+(0.11*b);<br>
+                                                &emsp;return {r:y, g:y, b:y, a:y};<br>
+                                          }<br>
+                                    </h4>
+                                    <canvas id="2" width="480" height="360"></canvas>
+                              </div>
+                              
+                              <div id="Sepia" class="tabcontent">
+                                    <h3>Sepia</h3>
+                                    <p>
+                                          Proses yang dilakukan untuk manipulasi sepia dengan membuat variabel baru yang berisi warna sepia pada tiap RGB<br>
+                                          lalu rubah warna asli dengan warna sepia.
+                                    </p>
+                                    <h4>
+                                          for (var i=0; i < imageData.data.length; i+=4) {<br>
+                                                &emsp;imageData.data[i] = r[imageData.data[i]];<br>
+                                                &emsp;imageData.data[i+1] = g[imageData.data[i+1]];<br>
+                                                &emsp;imageData.data[i+2] = b[imageData.data[i+2]];<br>
+                                          }<br>                                               
+                                    </h4>
+                                    <canvas id="3" width="480" height="360"></canvas>
+                              </div>
+                              
+                              <div id="Threshold" class="tabcontent">
+                                    <h3>Threshold</h3>
+                                    <p>Nilai intensitas citra yang lebih dari atau sama dengan nilai threshold (disini saya menggunakan nilai threshold 150)<br>
+                                    akan diubah menjadi putih 255, sedangkan nilai intensitas citra yang kurang dari nilai threshold akan diubah menjadi hitam 0.</p>
+                                    <h4>
+                                          var v = (0.2126*r + 0.7152*g + 0.0722*b >= 150) ? 255 : 0;
+                                    </h4>
+                                    <canvas id="4" width="480" height="360"></canvas>
+                              </div>
+            </div>
+            <script src="script/image.js"></script>
+
+
+
+      </body>
+      </html>

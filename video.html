@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Video</title>
+      <link rel="shortcut icon" href="https://bintangfadhlio.blogspot.com/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="script/style.css">
+
+      <style>
+      button{
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 5px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 12px;
+        margin-top: 5px;
+        width: 500px;
+      }
+      </style>
+</head>
+<body>
+      <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                        <a href="index.html">
+                            <img src="img/logo.png" height="50px" style="margin: 0px 30px">
+                        </a>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+                        
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="image.html">Image Manipulation</a>
+                <a href="animation.html">Animation Images</a>
+                <a href="audio.html">Audio</a>
+                <a class="active" href="video.html">Video</a>
+                <a href="360.html">Photo 360</a>
+                <a href="about.html">About Me</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <video id=v controls loop>
+                <source src="video/lion-sample.webm" type="video/webm">
+                <source src="video/lion-sample.ogv" type="video/ogg">
+                <source src="video/lion-sample.mp4" type="video/mp4">
+                <track default src="video/lion1.vtt" kind="captions" srclang="en" label="English Captions"></track>
+                <track src="video/lion1-id.vtt" kind="captions" srclang="id" label="Indonesian Captions"></track>
+            </video><br>
+            <h3>Original Video</h3><br>
+            <canvas id=1></canvas><br>
+            <h3>Grayscale</h3>
+            <p>
+                Grayscale adalah berbagai nuansa warna monokromatik dari hitam menjadi putih.<br>
+                Oleh karena itu, gambar grayscale hanya memiliki warna abu-abu dan tidak<br>
+                berwarna. Grayscale dipengaruhi oleh intensitas dari hitam (nol intensitas) dan putih (penuh intensitas).<br>
+                Biasanya grayscale mendukung minimal 8-bit grayscale, yang memiliki 256 level pencahayaan per pixel.<br>
+            </p>
+            <h4>
+                    for (var i = 0; i < data.length;i += 4){<br>
+                        &emsp;var r = data[i];<br>
+                        &emsp;var g = data[i+1];<br>
+                        &emsp;var b = data[i+2];<br>
+                        &emsp;var brightness = (3 * r + 4 * g + b) >>> 3;<br>
+                        &emsp;data[i] = brightness;<br>
+                        &emsp;data[i+1] = brightness;<br>
+                        &emsp;data[i+2] = brightness;<br>
+                    }<br>
+            </h4>
+            <br>
+            <canvas id=2></canvas><br>
+            <h3>Embossed</h3>
+            <p>Nilai intensitas citra yang lebih dari atau sama dengan nilai threshold (disini saya menggunakan nilai threshold 150)<br>
+            akan diubah menjadi putih 255, sedangkan nilai intensitas citra yang kurang dari nilai threshold akan diubah menjadi hitam 0.</p>
+            <h4>
+                for(var i = 0; i < limit; i++) {<br>
+                    &emsp;if( i%4 == 3 ) continue;<br>
+                    &emsp;data[i] = 127 + 2*data[i] - data[i + 4] - data[i + w*4];<br>
+                }<br>
+            </h4>
+            <br>
+            <canvas id=3></canvas><br>
+            <h3>Threshold</h3>
+            <p>Nilai intensitas citra yang lebih dari atau sama dengan nilai threshold (disini saya menggunakan nilai threshold 150)<br>
+            akan diubah menjadi putih 255, sedangkan nilai intensitas citra yang kurang dari nilai threshold akan diubah menjadi hitam 0.</p>
+            <h4>
+                  var v = (0.2126*r + 0.7152*g + 0.0722*b >= 150) ? 255 : 0;
+            </h4>
+            <br>
+        </div>
+
+        <script src="script/video.js"></script>
+</body>
+</html>

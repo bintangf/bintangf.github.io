@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Audio</title>
+      <link rel="shortcut icon" href="https://bintangfadhlio.blogspot.com/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="script/style.css">
+
+      <style>
+      button{
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 5px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 12px;
+        margin-top: 5px;
+        width: 500px;
+      }
+      </style>
+</head>
+<body>
+      <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                        <a href="index.html">
+                            <img src="img/logo.png" height="50px" style="margin: 0px 30px">
+                        </a>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+                        
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="image.html">Image Manipulation</a>
+                <a href="animation.html">Animation Images</a>
+                <a class="active" href="audio.html">Audio</a>
+                <a href="video.html">Video</a>
+                <a href="360.html">Photo 360</a>
+                <a href="about.html">About Me</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <audio id="my-audio" style="width: 500px; margin-left:40px;" controls>
+                <source src="audio/SAD MUSIC.mp3" type="audio/mp3">
+                Sorry, your browser does not support HTML5 audio.
+            </audio>
+            <ul id="playlist">
+                <button onclick="gantiAudio('audio/EVIL LAUGH.mp3');">Evil Laugh</button><br>
+                <button onclick="gantiAudio('audio/SAD MUSIC.mp3');">Sad Music</button><br>
+                <button onclick="gantiAudio('audio/ILLUMINATI.mp3');">Illuminati</button><br>
+            </ul>
+        </div>
+
+        <script src="script/audio.js"></script>
+</body>
+</html>

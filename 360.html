@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Photo 360</title>
+      <link rel="shortcut icon" href="https://bintangfadhlio.blogspot.com/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="script/style.css">
+      <script src="script/kaleidoscope.min.js"></script>
+</head>
+<body>
+      <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                        <a href="index.html">
+                            <img src="img/logo.png" height="50px" style="margin: 0px 30px">
+                        </a>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+                        
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="image.html">Image Manipulation</a>
+                <a href="animation.html">Animation Images</a>
+                <a href="audio.html">Audio</a>
+                <a href="video.html">Video</a>
+                <a class="active" href="360.html">Photo 360</a>
+                <a href="about.html">About Me</a>
+            </div>
+        </div>
+
+        <br>
+        <h1 class="center" style="font-size: 42px; color: white; text-align: center; text-shadow: 2px 2px 4px #000000;">
+            Photo 360
+        </h1>
+        <div id="photo360" style="margin-left: 200px; filter: grayscale(100%);"></div>
+        <br>
+
+        <script>
+            (function() {
+                var viewer = new Kaleidoscope.Image({
+                    source: '360/binus360.jpg',
+                    containerId: '#photo360',
+                    height: window.innerHeight-250,
+                    width: window.innerWidth-400,
+                });
+                viewer.render();
+
+                window.onresize = function() {
+                    viewer.setSize({height: window.innerHeight, width: window.innerWidth});
+                };
+            })();
+        </script>
+</body>
+</html>
