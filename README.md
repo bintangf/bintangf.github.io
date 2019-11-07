@@ -1,2 +1,2 @@
 # web-manipulation
-you can preview this project in this link https://bintangf.github.io/
+you can preview this project in this link https://bintangf.github.io/web-manipulation/
