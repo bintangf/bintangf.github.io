@@ -42,10 +42,16 @@
         <h1 class="center" style="font-size: 42px; color: white; text-align: center; text-shadow: 2px 2px 4px #000000;">
             Photo 360
         </h1>
-        <div id="photo360" style="margin-left: 200px; filter: grayscale(100%);"></div>
+        <div id="photo360" style="margin-left: 200px;"></div>
+        <br>
+        <button onclick="grey()">Press Me</button>
         <br>
 
         <script>
+            function grey() {
+                var x = document.getElementById("photo360");
+                x.style.filter = grayscale(100%);
+            }
             (function() {
                 var viewer = new Kaleidoscope.Image({
                     source: '360/binus360.jpg',
