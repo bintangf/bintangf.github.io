@@ -48,10 +48,6 @@
         <br>
 
         <script>
-            function grey() {
-                var x = document.getElementById("photo360");
-                x.style.filter = grayscale(100%);
-            }
             (function() {
                 var viewer = new Kaleidoscope.Image({
                     source: '360/binus360.jpg',
@@ -65,6 +61,11 @@
                     viewer.setSize({height: window.innerHeight, width: window.innerWidth});
                 };
             })();
+              
+            function grey() {
+                var x = document.getElementById("photo360");
+                x.style.filter = "grayscale(100%)";
+            }
         </script>
 </body>
 </html>
