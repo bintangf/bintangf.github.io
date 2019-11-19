@@ -44,10 +44,9 @@
         </h1>
         <div id="photo360" style="margin-left: 200px;"></div>
         <br>
-        <button onclick="grey()" class="center" style="font-size: 42px; color: white;>Press Me</button>
+        <button onclick="grey()" class="center" style="font-size: 32px; color: black; text-align: center;">Press Me</button>
         <br>
         <br>
-
         <script>
             (function() {
                 var viewer = new Kaleidoscope.Image({
@@ -57,7 +56,6 @@
                     width: window.innerWidth-400,
                 });
                 viewer.render();
-
                 window.onresize = function() {
                     viewer.setSize({height: window.innerHeight, width: window.innerWidth});
                 };
